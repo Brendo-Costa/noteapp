@@ -17,7 +17,7 @@ class Task(models.Model):
     """
     name = models.CharField(max_length=255, blank=False, null=False)
     times = models.IntegerField(blank=False, null=False)
-    time_for_times = models.IntegerField(blank=False, null=False)
+    minutes_for_times = models.IntegerField(blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -26,4 +26,4 @@ class Task(models.Model):
     
     def total_time(self):
         """Return the total time, in minutes, used in the task."""
-        return self.times * self.time_for_times
+        return self.times * self.minutes_for_times

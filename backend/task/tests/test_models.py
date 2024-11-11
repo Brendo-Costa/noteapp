@@ -12,19 +12,17 @@ class TestingTaskAppModels(TestCase):
         
         name = 'Study Django'
         times = 2
-        time_for_times = 50
+        minutes_for_times = 50
         
         task = Task.objects.create(
             name=name,
             times=times, 
-            time_for_times=time_for_times,
+            minutes_for_times=minutes_for_times,
         )
         
         initial_count = Task.objects.count()
         
         self.assertEqual(task.name, name)
         self.assertEqual(task.times, times)
-        self.assertEqual(task.time_for_times, time_for_times)
+        self.assertEqual(task.minutes_for_times, minutes_for_times)
         self.assertEqual(initial_count, 1)
-        
-    
